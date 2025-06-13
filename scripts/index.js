@@ -6,15 +6,15 @@ const nameInput = document.querySelector("#input-name");
 const aboutInput = document.querySelector("#input-about");
 const titlePerfile = document.querySelector(".perfile-title");
   const descriptionPerfile = document.querySelector(".perfile-description");
-  const cardLikeButton = document.querySelector (".card_like-button")
+  const cardLike = document.querySelector (".card-like")
 
 
-cardLikeButton.addEventListener("click", () => {
-  if(!cardLikeButton.classList.contains("active")){
-      cardLikeButton.classList.add("active");
+cardLike.addEventListener("click", () => {
+  if(!cardLike.classList.contains("active")){
+      cardLike.classList.add("active");
   }
   else{ 
-    cardLikeButton.classList.remove("active");}
+    cardLike.classList.remove("active");}
 
 })
   abrirModal.addEventListener("click", () => {
