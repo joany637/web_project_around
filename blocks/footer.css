@@ -1,0 +1,8 @@
+.footer{
+    width: 318px;
+color: rgba(84, 84, 84, 1);
+         display: flex
+;
+    justify-content: space-around;
+    
+}

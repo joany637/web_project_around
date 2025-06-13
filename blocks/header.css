@@ -1,0 +1,26 @@
+.header{
+       display: flex;
+    flex-direction: column;
+    padding: 50px;
+        align-items: flex-start;
+}
+.header-vector{
+    width: 173px;
+    margin-bottom: 50px;
+}
+
+.header-line {
+    border: none;
+      border: 1px solid rgba(84, 84, 84, 1);
+    margin-top: 10px;
+    width: 100%;
+   
+}
+
+@media screen and (max-width:960px)  {
+    .header-vector{
+        width: 126px;
+    }
+
+}
+

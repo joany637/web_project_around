@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Around">
+    <meta name="author" content="Joany_Mariny">
+    <meta name="keywords" content="html, css">
+    <title>Around</title>
+    <link rel="stylesheet" href="pages/index.css">
+</head>
+<body>
+    <div class="page">
+       
+    <header class="header">
+       <img src="./images/Vector.png" alt="palabra Around" class="header-vector">
+       <hr class="header-line">
+    </header>
+
+    <main class="container">
+        <div class="perfile">
+        <img src="./images/hombre.jpg" alt="hombre " class="perfile-img">
+
+        <div class="perfile-content">
+        <div class="perfile-info">
+<div class="perfile-about">
+        <h1 class="perfile-title">Jacques  Cousteau</h1>
+        <div class="edit-perfil">
+
+            <img src="./images/lapiz.png" alt="lapiz" class="img" id="abrirModal">
+        </div>
+        </div>
+
+       <p class="perfile-description">Explorador</p> 
+        
+        </div>
+
+        <!-- Modal (por defecto oculto) -->
+<div class="popup" id="edit-perfil">
+  <div class="popup__container">
+    <button class="popup__close">&times;</button>
+    <h2 class="popup__title">Editar perfil</h2>
+    <form class="popup__form">
+      <input class="popup__input" type="text" placeholder="Nombre" id="input-name" required>
+      <input class="popup__input" type="text" placeholder="Acerca de mí" id="input-about" required>
+      <button class="popup__save" disabled>Guardar</button>
+    </form>
+  </div>
+</div>
+        </div>
+        
+       <div class="add">+</div>
+       
+       </div>
+
+<div class="gallery">
+        <div class="gallery-item">
+            
+        <img src="./images/bosque.jpg" alt="bosque">
+          <div class="overlay">
+        <p>Valle de Yosemite</p>
+      <button class="card_like-button"  type="button" > </button>     
+
+          </div>
+       </div>
+<div class="gallery-item">
+        <img src="./images/lagos.png" alt="lagos">
+        <div class="overlay">
+        <p>Lago Louise</p>
+       
+<button class="card_like-button"  type="button" > </button>     
+  
+        </div>
+       </div>
+
+        <div class="gallery-item">
+        <img src="./images/atardecer.png" alt="atardecer">
+          <div class="overlay">
+        <p>Montañas Calvas</p>
+            <button class="card_like-button"  type="button" > </button>     
+
+       </div>
+       </div>
+       
+         <div class="gallery-item">
+        <img src="./images/noche estrellada.png" alt="noche estrellada">
+        <div class="overlay">
+        <p>Latemar</p>
+          <button class="card_like-button"  type="button" > </button>     
+
+       </div>
+       </div>
+
+        <div class="gallery-item">
+        <img src="./images/montaña.png" alt="montañas y lago">
+        <div class="overlay">
+        <p>Vanois National...</p>
+      <button class="card_like-button"  type="button" > </button>     
+
+       </div>
+       </div>
+
+      <div class="gallery-item">
+        <img src="./images/canoas.png" alt="canoas">
+           <div class="overlay">
+        <p>Lago di Braies</p>
+        <div>
+          <button class="card_like-button"  type="button" > </button>     
+
+          </div>
+        </div>
+       </div>
+              </div>
+              
+    </main>
+    <footer class="footer">
+        <p class="footer">© 2024 Around The U.S.</p>
+    </footer>
+  
+    </div>
+ 
+      <script src="./script/script.js"></script>
+</body>
+</html>
