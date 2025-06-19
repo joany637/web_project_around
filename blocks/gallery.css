@@ -25,7 +25,7 @@ border-top-right-radius: 10px;
     display: block;
     width: 100%;
 }
-.card_like{
+.card-like{
 background: url('../images/corazon.svg') no-repeat center ;
 width: 25px;
 height: 19px;
@@ -33,10 +33,10 @@ border: none;
 
 }
 
-.card_like:hover{
+.card-like:hover{
     color: dimgray;
 }
-.card_like.active{
+.card-like.active{
     color: black;
     background: url('../images/corazon\ negro.png') no-repeat center ;
 

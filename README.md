@@ -19,4 +19,4 @@ El sitio muestra:
 
 # Clonar el repositorio
 
-https://github.com/joany637/web_project_around/settings
+https://joany637.github.io/web_project_around/
