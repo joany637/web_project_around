@@ -3,6 +3,7 @@
     flex-direction: column;
     padding: 50px;
         align-items: flex-start;
+        max-width: 100%;
 }
 .header-vector{
     width: 173px;

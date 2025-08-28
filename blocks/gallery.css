@@ -1,40 +1,37 @@
-
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 50px ;
-    justify-content: start;
-    font-family: 'Inter';
-border-top-left-radius: 10px;
-border-top-right-radius: 10px;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 50px;
+  justify-content: start;
+  font-family: "Inter";
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  gap: 20px;
+  max-width: 100%;
 }
 
-
 .gallery-item {
-    position: relative;
-    overflow: hidden;
-   background: rgba(0, 0, 0, 1);
-    width: 282px;
-border-top-left-radius: 10px;
-border-top-right-radius: 10px;
-
+  position: relative;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 1);
+  width: 282px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .gallery-item__image {
-    display: block;
-    width: 100%;
-        min-height: 305px;
-    object-fit: cover;
+  display: block;
+  width: 100%;
+  min-height: 305px;
+  object-fit: cover;
 }
 
-
 .trash {
-position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    max-width: 18px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  max-width: 18px;
 }
 
 /* tapa */
@@ -44,65 +41,57 @@ position: absolute;
   width: 38px;
   height: 6px;
 }
-.trash:hover{
-   color: dimgray;
-   background: url('../images/basurero\ gris.png') no-repeat;
+.trash:hover {
+  color: dimgray;
+  background: url("../images/basurero\ gris.png") no-repeat;
 }
 
-
-
-.card-like{
-background: url('../images/corazon.svg') no-repeat center ;
-width: 25px;
-height: 19px;
-border: none;
-
+.card-like {
+  background: url("../images/corazon.svg") no-repeat center;
+  width: 25px;
+  height: 19px;
+  border: none;
 }
 
-.card-like:hover{
-    color: dimgray;
+.card-like:hover {
+  color: dimgray;
 }
-.card-like.active{
-    color: black;
-    background: url('../images/corazon\ negro.png') no-repeat center ;
-
+.card-like.active {
+  color: black;
+  background: url("../images/corazon\ negro.png") no-repeat center;
 }
 
 .overlay {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    overflow:auto;
-    background-color: rgba(255, 255, 255, 0.9);
-    color:rgba(0, 0, 0, 1);
-    display: flex;
-    justify-content: space-around; 
-    align-items: center;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    font-family: 'Inter';
-font-weight: 900;
-font-size: 24px;
-line-height: 100%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 1);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  font-family: "Inter";
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 100%;
 }
 
-
-
-
-@media screen and (max-width:960px) {
-    .gallery{
-        display: grid;
-            grid-template-columns: repeat(2, 1fr);
-                    justify-items: center;
-
-    }
+@media screen and (max-width: 960px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
 }
-    @media screen and (max-width:645px){
-.gallery{
-        display: grid;
-            grid-template-columns: repeat(1, 1fr);
-                    justify-items: center;
-
-    }
+@media screen and (max-width: 645px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
-
