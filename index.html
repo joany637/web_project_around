@@ -46,22 +46,28 @@
                 <div class="popup__container">
                   <button class="popup__close">&times;</button>
                   <h2 class="popup__title">Editar perfil</h2>
-                  <form class="popup__form">
+                  <form class="popup__form" novalidate>
                     <input
                       class="popup__input"
                       type="text"
                       placeholder="Nombre"
                       id="input-name"
+                      minlength="2"
+                      maxlength="40"
                       required
                     />
+                      <span class="input-name-error popup__error"></span>
                     <input
                       class="popup__input"
                       type="text"
                       placeholder="Acerca de mí"
                       id="input-about"
+                      minlength="2"
+                      maxlength="200"
                       required
                     />
-                    <button type="submit" class="popup__save">Guardar</button>
+                       <span class="input-about-error popup__error"></span>
+                    <button type="submit" class="popup__save" disabled>Guardar</button>
                   </form>
                 </div>
               </div>
@@ -72,21 +78,27 @@
               <div class="popup__container2">
                 <button class="popup__close2">&times;</button>
                 <h2 class="popup__title2">Nuevo lugar</h2>
-                <form class="popup__form">
+                <form class="popup__form"  novalidate>
                   <input
                     class="popup__input2"
                     type="text"
                     placeholder="Título"
                     id="input-title2"
+                    minlength="2"
+                    maxlength="30"
                     required
                   />
+                      <span class="input-title2-error form__input-error"></span>
+
                   <input
                     class="popup__input2"
                     type="text"
-                    placeholder="Enlace a la imagen"
+                    placeholder="URL a la imagen"
                     id="input-about2"
                     required
                   />
+                  <span class="input-about2-error form__input-error"></span>
+                  
                   <button type="submit" class="popup__save">Crear</button>
                 </form>
               </div>
@@ -127,6 +139,6 @@
         </div>
       </div>
     </template>
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/index.js" type="module"></script>
   </body>
 </html>

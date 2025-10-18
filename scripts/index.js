@@ -1,3 +1,4 @@
+import {enableValidation} from "./validate.js"
 document.addEventListener("DOMContentLoaded", () => {
   const abrirModal = document.getElementById("abrirModal");
   const popup = document.getElementById("edit-perfil");
@@ -19,14 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const template = document.querySelector(".template").content;
   const gallery = document.querySelector(".gallery");
-
-
+  
 // Seleccionar elementos
 const popup3 = document.getElementById("imagePopup");
 const popupImage = document.querySelector(".popup__image");
 const popupDescription = document.querySelector(".popup__descrition");
 const closeBtn = document.querySelector(".popup__close3");
-
 
 // Cerrar popup al hacer clic en la X
 closeBtn.addEventListener("click", () => {
@@ -40,10 +39,6 @@ popup3.addEventListener("click", (e) => {
     popup3.classList.remove('popup_opened')
   }
 });
-
-
-
-
 
   const initialCards = [
     {
@@ -127,6 +122,16 @@ popup3.addEventListener("click", (e) => {
     popup2.classList.remove("popup_opened2");
   });
 
+enableValidation({
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input2",
+  submitButtonSelector: ".popup__save",
+  inactiveButtonClass: "popup__save_disabled",
+  inputErrorClass: "form__input_type_error",
+  errorClass: "form__error_visible"
+});
+
+
   //basurero
 
   formProfile.addEventListener("submit", function (event) {
@@ -145,3 +150,78 @@ popup3.addEventListener("click", (e) => {
     popup2.classList.remove("popup_opened2");
   });
 });
+
+
+
+// Seleccionamos el formulario y sus elementos
+const formElement = document.querySelector(".popup__form");
+const inputList = Array.from(formElement.querySelectorAll(".popup__input"));
+const saveButton = formElement.querySelector(".popup__save");
+
+// Muestra el error debajo del campo
+const showInputError = (formElement, inputElement, errorMessage) => {
+  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+  inputElement.classList.add("popup__input_type_error");
+  errorElement.textContent = errorMessage;
+  errorElement.classList.add("form__input-error_active");
+};
+
+// Oculta el error
+const hideInputError = (formElement, inputElement) => {
+  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+  inputElement.classList.remove("popup__input_type_error");
+  errorElement.classList.remove("form__input-error_active");
+  errorElement.textContent = "";
+};
+
+// Comprueba si un campo es válido
+const isValid = (formElement, inputElement) => {
+  if (!inputElement.validity.valid) {
+    showInputError(formElement, inputElement, inputElement.validationMessage);
+  } else {
+    hideInputError(formElement, inputElement);
+  }
+};
+
+// Habilita o deshabilita el botón según la validez
+const toggleButtonState = (inputList, buttonElement) => {
+  const hasInvalidInput = inputList.some((inputElement) => !inputElement.validity.valid);
+  if (hasInvalidInput) {
+    buttonElement.disabled = true;
+    buttonElement.classList.add("popup__save_disabled");
+  } else {
+    buttonElement.disabled = false;
+    buttonElement.classList.remove("popup__save_disabled");
+  }
+};
+
+popup__form.addEventListener("click", (e) => {
+  if (e.target === popup__form) {
+    popup__form.classList.remove('popup_opened')
+  }
+});
+
+// Configura los listeners del formulario
+const setEventListeners = (formElement) => {
+  const inputList = Array.from(formElement.querySelectorAll(".popup__input"));
+  const buttonElement = formElement.querySelector(".popup__save");
+
+  toggleButtonState(inputList, buttonElement);
+
+  inputList.forEach((inputElement) => {
+    inputElement.addEventListener("input", () => {
+      isValid(formElement, inputElement);
+      toggleButtonState(inputList, buttonElement);
+    });
+  });
+};
+
+// Inicializa todo
+setEventListeners(formElement);
+
+// Evita recargar al enviar
+formElement.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+  console.log("Formulario válido y enviado 🎉");
+});
+
