@@ -11,7 +11,7 @@ background: rgba(0, 0, 0, 1);
       max-width: 100%;
 }
 
-@media screen and (max-width:370px){
+@media screen and (max-width:970px){
   .page{
     max-width: 100%;
   }

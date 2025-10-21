@@ -1,4 +1,4 @@
-import {enableValidation} from "./validate.js"
+import {enableValidation} from "./validate.js";
 document.addEventListener("DOMContentLoaded", () => {
   const abrirModal = document.getElementById("abrirModal");
   const popup = document.getElementById("edit-perfil");
@@ -100,6 +100,7 @@ popup3.addEventListener("click", (e) => {
     const newCard = createCard(item.name, item.link);
     gallery.append(newCard);
   });
+  
 
   //lapiz
   abrirModal.addEventListener("click", () => {
@@ -121,7 +122,6 @@ popup3.addEventListener("click", (e) => {
   cerrarModal2.addEventListener("click", () => {
     popup2.classList.remove("popup_opened2");
   });
-
 enableValidation({
   formSelector: ".popup__form",
   inputSelector: ".popup__input2",
@@ -130,8 +130,6 @@ enableValidation({
   inputErrorClass: "form__input_type_error",
   errorClass: "form__error_visible"
 });
-
-
   //basurero
 
   formProfile.addEventListener("submit", function (event) {
@@ -151,12 +149,11 @@ enableValidation({
   });
 });
 
-
-
 // Seleccionamos el formulario y sus elementos
-const formElement = document.querySelector(".popup__form");
+const formElement = document.querySelector("#edit-perfil-form");
 const inputList = Array.from(formElement.querySelectorAll(".popup__input"));
 const saveButton = formElement.querySelector(".popup__save");
+const popup = document.querySelector("#edit-perfil");
 
 // Muestra el error debajo del campo
 const showInputError = (formElement, inputElement, errorMessage) => {
@@ -195,9 +192,9 @@ const toggleButtonState = (inputList, buttonElement) => {
   }
 };
 
-popup__form.addEventListener("click", (e) => {
-  if (e.target === popup__form) {
-    popup__form.classList.remove('popup_opened')
+popup.addEventListener("click", (e) => {
+  if (e.target === popup) {
+    popup.classList.remove('popup_opened')
   }
 });
 
@@ -224,4 +221,5 @@ formElement.addEventListener("submit", (evt) => {
   evt.preventDefault();
   console.log("Formulario válido y enviado 🎉");
 });
+
 

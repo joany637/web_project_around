@@ -5,7 +5,7 @@ const formElement = document.querySelector(".popup__form");
 // Seleccionamos los inputs individuales
 const inputTitle = document.querySelector("#input-title2");
 const inputUrl = document.querySelector("#input-about2");
-
+const popup2 = document.querySelector("#edit-perfil2")
 // Seleccionamos los mensajes de error según el id del input
 const errorTitle = formElement.querySelector(`.input-title2-error`);
 const errorUrl = formElement.querySelector(`.input-about2-error`);
@@ -70,6 +70,11 @@ inputUrl.addEventListener("input", () => {
   toggleButtonState(inputList, buttonElement);
 });
 
+popup2.addEventListener("click", (e) => {
+  if (e.target === popup2) {
+    popup2.classList.remove('popup_opened')
+  }
+});
 
 // Previene el envío real y muestra mensaje en consola
 formElement.addEventListener("submit", (evt) => {

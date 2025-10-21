@@ -15,9 +15,6 @@
   margin-left: 35px;
 }
 
-.perfile-content {
-}
-
 .perfile-info {
   flex-grow: 1;
   display: flex;
@@ -110,6 +107,10 @@
   border: none;
   cursor: pointer;
   font-size: 58px;
+      display: flex
+;
+    flex-direction: row-reverse;
+    align-items: flex-end;
 }
 
 .popup__close:hover {
@@ -127,6 +128,10 @@
   border: none;
   cursor: pointer;
   font-size: 58px;
+       display: flex
+;
+    flex-direction: row-reverse;
+    align-items: flex-end;
 }
 
 .popup__close2:hover {
@@ -238,9 +243,6 @@
   color: white;
   cursor: not-allowed;
 }
-
-
-
 .popup__save:hover {
   color: dimgray;
 }
@@ -372,13 +374,29 @@
 
 @media screen and (max-width: 500px) {
   .popup {
-    width: 282px;
+    width: 100%;
   }
   .popup__close {
-    width: 26px;
+max-width: 25px;
+left: 265px;
+opacity: 1;
+
   }
+   .popup__close2 {
+max-width: 25px;
+left: 265px;
+opacity: 1;
+
+  }
+
 
   .add {
     margin-left: 0;
+  }
+  .popup__container{
+    max-width: 200px;
+  }
+    .popup__container2{
+    max-width: 200px;
   }
 }
